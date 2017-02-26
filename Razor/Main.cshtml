@@ -1,0 +1,29 @@
+﻿@{
+    string totalMessage = "";
+    if (IsPost)
+    {
+        int total = Request["text1"].AsInt() + Request["text2"].AsInt();
+        totalMessage = "Total = " + total;
+    }
+}
+<html>
+<body>
+    <form method="post">
+        <p>
+            <label for="text1">First Number:</label><br>
+            <input type="text" name="text1" value="@Request["text1"].AsInt()" />
+        </p>
+        <p>
+            <label for="text2">Second Number:</label><br>
+            <input type="text" name="text2" value="@Request["text2"].AsInt()" />
+        </p>
+        <p><input type="submit" value=" Add " /></p>
+    </form>
+    
+    @foreach (var item in Request.Params)
+    {
+        totalMessage += item + " ";
+    }
+    <p>@totalMessage</p>
+</body>
+</html>
