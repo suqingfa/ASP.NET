@@ -1,0 +1,10 @@
+iis设置http自动转https
+	在403.html中添加
+	<script type="text/javascript">
+		var url = window.location.href;
+		if (url.indexOf("https") < 0) {
+			url = url.replace("http:", "https:");
+			window.location.replace(url);
+		}
+	</script>
+	在ssl设置中选择 要求ssl
