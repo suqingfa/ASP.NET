@@ -20,12 +20,17 @@ namespace MVC.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				if (u.UserName == "Admin" && u.Password == "Admin")
+				UserStatus status = new UserValidity().GetUserValidity(u);
+				switch (status)
 				{
-					FormsAuthentication.SetAuthCookie(u.UserName, false);
-					return RedirectToAction("EmployeeListView", "Employee");
+					case UserStatus.AuthenticatedAdmin:
+					case UserStatus.AuthentucatedUser:
+						Session["IsAdmin"] =  status == UserStatus.AuthenticatedAdmin;
+						FormsAuthentication.SetAuthCookie(u.UserName, false);
+						return RedirectToAction("EmployeeListView", "Employee");
 				}
 
+				Session["IsAdmin"] = false;
 				ModelState.AddModelError("CredentialError", "Invalid Username or Password");
 			}
 

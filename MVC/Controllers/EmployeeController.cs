@@ -1,4 +1,5 @@
 ﻿using MVC.Data_Access_Layer;
+using MVC.Filters;
 using MVC.Models;
 using MVC.ViewModels;
 using System;
@@ -30,12 +31,21 @@ namespace MVC.Controllers
 
 			return View("EmployeeListView", list);
 		}
+		
+		public ActionResult AddNewLink()
+		{
+			if (Convert.ToBoolean(Session["IsAdmin"]))
+				return PartialView("AddNewLink");
+			return new EmptyResult();
+		}
 
+		[AdminFilter]
 		public ActionResult AddNew()
 		{
 			return View("CreateEmployee");
 		}
 
+		[AdminFilter]
 		public ActionResult SaveEmployee(EmployeeModel e)
 		{
 			if (ModelState.IsValid)

@@ -13,6 +13,7 @@
 <body>
     <div style="text-align:right"> Hello, @Model.UserName <a href="/Authentication/Logout">Logout</a></div>
 	<hr />
+    @{ Html.RenderAction("AddNewLink");}
 	<div>
 		<table border="1">
 			<tr>
