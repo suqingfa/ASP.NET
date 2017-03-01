@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Http处理程序", "Http处
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC", "MVC\MVC.csproj", "{B75F1666-2880-44E6-A842-F4F316F75419}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC路由", "MVC路由\MVC路由.csproj", "{D4387E19-6E68-4155-B91C-4964EDAA36B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B75F1666-2880-44E6-A842-F4F316F75419}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B75F1666-2880-44E6-A842-F4F316F75419}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B75F1666-2880-44E6-A842-F4F316F75419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4387E19-6E68-4155-B91C-4964EDAA36B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4387E19-6E68-4155-B91C-4964EDAA36B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4387E19-6E68-4155-B91C-4964EDAA36B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4387E19-6E68-4155-B91C-4964EDAA36B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
