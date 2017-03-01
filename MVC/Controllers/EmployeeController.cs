@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MVC.Controllers
 {
+	[Authorize]
 	public class EmployeeController : Controller
 	{
 		public string GetString()
@@ -25,7 +26,7 @@ namespace MVC.Controllers
 		public ActionResult EmployeeListView()
 		{
 			EmployeeListViewModel list =
-				new EmployeeListViewModel("Admin", new SalesERPDAL().Employees.ToList());
+				new EmployeeListViewModel(User.Identity.Name, new SalesERPDAL().Employees.ToList());
 
 			return View("EmployeeListView", list);
 		}
