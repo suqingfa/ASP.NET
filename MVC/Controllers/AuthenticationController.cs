@@ -8,6 +8,7 @@ using System.Web.Security;
 
 namespace MVC.Controllers
 {
+	[AllowAnonymous]
 	public class AuthenticationController : Controller
 	{
 		public ActionResult Login()
