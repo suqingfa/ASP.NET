@@ -1,0 +1,22 @@
+﻿@{ Layout = null; } @using MVC.ViewModels @model EmployeeViewModel
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>MyView</title>
+</head>
+
+<body>
+	<hr />
+	<div>
+		<b>Employee Details</b><br /> Employee Name : @Model.EmployeeName<br />
+		<span style="background-color:@Model.SalaryColor;">
+            Employee Salary: @Model.Salary
+        </span>
+	</div>
+</body>
+
+</html>
